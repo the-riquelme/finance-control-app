@@ -2,7 +2,6 @@ package com.riquelme.financecontrolapp.repository
 
 import android.content.ContentValues
 import android.content.Context
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.riquelme.financecontrolapp.database.SQlite
 import com.riquelme.financecontrolapp.model.Order
@@ -41,7 +40,7 @@ class OrderRepository(var cotext: Context) {
 
     private fun getAmountOrSpent(isReceived: Boolean): String {
         val entryValue = if (isReceived) 1 else 0
-        val cursor = database.rawQuery("SELECT sum(price) FROM products WHERE entry = ?", arrayOf(entryValue.toString()))
+        val cursor = database.rawQuery("SELECT sum(price) FROM orders WHERE entryOrExit = ?", arrayOf(entryValue.toString()))
 
         var totalAmount = "0.00"
 

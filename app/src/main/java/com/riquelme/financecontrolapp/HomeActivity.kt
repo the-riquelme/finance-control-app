@@ -9,11 +9,10 @@ import android.view.View
 import com.riquelme.financecontrolapp.model.Order
 import com.riquelme.financecontrolapp.repository.OrderRepository
 
-class HomeActivity : AppCompatActivity(), OnClickListener {
+class HomeActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityHomeBinding
     lateinit var repository: OrderRepository
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +24,8 @@ class HomeActivity : AppCompatActivity(), OnClickListener {
     }
 
     private fun setClickEvents() {
-        binding.registerBtn.setOnClickListener(this)
-        binding.listBtn.setOnClickListener(this)
+        binding.registerBtn.setOnClickListener { registerOrder() }
+        binding.listBtn.setOnClickListener { summary() }
     }
 
     private fun registerOrder() {
@@ -44,18 +43,19 @@ class HomeActivity : AppCompatActivity(), OnClickListener {
 
         val order = Order(name, price, date, entryOrOut)
         repository.save(order)
+
+        binding.productValue.text.clear()
+        binding.valueValue.text.clear()
+        binding.date.text.clear()
+        binding.entry.isChecked = false
+        binding.out.isChecked = false
+
+        summary()
     }
 
     private fun summary() {
         val listIntent = Intent(baseContext, SummaryActivity::class.java)
         startActivity(listIntent)
-    }
-
-    override fun onClick(view: View) {
-        when(view.id){
-            binding.registerBtn.id -> registerOrder()
-            binding.listBtn.id -> summary()
-        }
     }
 
 }
