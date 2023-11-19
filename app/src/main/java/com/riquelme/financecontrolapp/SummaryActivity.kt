@@ -1,16 +1,16 @@
 package com.riquelme.financecontrolapp
 
 import androidx.appcompat.app.AppCompatActivity
-import com.riquelme.financecontrolapp.databinding.ActivityHomeBinding
+import com.riquelme.financecontrolapp.databinding.ActivitySummaryBinding
 import android.os.Bundle
 
-class HomeActivity : AppCompatActivity() {
+class SummaryActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityHomeBinding
+    lateinit var binding: ActivitySummaryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivitySummaryBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
