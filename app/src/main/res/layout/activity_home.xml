@@ -9,4 +9,216 @@
     android:layout_margin="16dp"
     >
 
+    <!-- Start Borders-->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#79b6c9"
+        />
+    <View
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#79b6c9"
+        />
+    <View
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#79b6c9"
+        />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#79b6c9"
+        />
+    <!-- End Borders-->
+
+    <!-- Rótulo para "Nome do Produto" -->
+    <TextView
+        android:id="@+id/labelProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome do Produto"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Campo de entrada para "Nome do Produto" -->
+    <EditText
+        android:id="@+id/productValue"
+        android:layout_width="320dp"
+        android:layout_height="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelProduct"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:background="#79b6c9"
+        android:hint="Digite o nome do produto"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:textColorHint="#363636"/>
+
+    <!-- Rótulo para "Valor" -->
+    <TextView
+        android:id="@+id/labelValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Campo de entrada para "Valor" -->
+    <EditText
+        android:id="@+id/valueValue"
+        android:layout_width="320dp"
+        android:layout_height="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:background="#79b6c9"
+        android:hint="R$ 0.00"
+        android:inputType="numberDecimal"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#3b0764"
+        android:textStyle="italic"
+        android:textColorHint="#363636"/>
+
+    <!-- Rótulo para "Data" -->
+    <TextView
+        android:id="@+id/labelDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/valueValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Campo de entrada para "Data" -->
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="320dp"
+        android:layout_height="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:background="#79b6c9"
+        android:inputType="date"
+        android:hint="Dia/Mês/Ano"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textColor="#3b0764"
+        android:textStyle="italic"
+        android:textColorHint="#363636"/>
+
+    <!-- Rótulo para "Entry" -->
+    <CheckBox
+        android:id="@+id/entry"
+        android:layout_marginTop="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/date"
+        app:layout_constraintStart_toStartOf="@id/date"
+        android:background="@color/white"
+        />
+
+    <!-- Rótulo para "Entrada" -->
+    <TextView
+        android:id="@+id/labelEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrada"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/entry"
+        app:layout_constraintTop_toTopOf="@id/entry"
+        app:layout_constraintBottom_toBottomOf="@id/entry"
+        android:layout_marginStart="8dp"
+        />
+
+    <!-- Rótulo para "Out" -->
+    <CheckBox
+        android:id="@+id/out"
+        android:layout_marginTop="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/date"
+        app:layout_constraintEnd_toStartOf="@id/labelOut"
+        android:layout_marginEnd="8dp"
+        />
+
+    <!-- Rótulo para "Saída" -->
+    <TextView
+        android:id="@+id/labelOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saída"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/entry"
+        app:layout_constraintBottom_toBottomOf="@id/entry"
+        app:layout_constraintEnd_toEndOf="@id/date"
+        android:layout_marginLeft="8dp"
+        />
+
+    <!-- Botão "Salva" -->
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:cornerRadius="0dp"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/entry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/entry"
+        android:layout_marginLeft="14dp"
+        android:backgroundTint="#79b6c9"
+        />
+
+    <!-- Botão "Resumo" -->
+    <Button
+        android:id="@+id/listBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resumo"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:cornerRadius="0dp"
+        android:textSize="23sp"
+        app:layout_constraintTop_toBottomOf="@id/entry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/registerBtn"
+        android:backgroundTint="#79b6c9"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintEnd_toEndOf="@id/labelOut"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
