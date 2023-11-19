@@ -4,5 +4,5 @@ data class Order(
     val name: String,
     val price: Double,
     val date: String,
-    val entryOrExit: Long) {
+    val entryOrExit: Int) {
 }

@@ -7,12 +7,12 @@ import android.database.sqlite.SQLiteDatabase
 import com.riquelme.financecontrolapp.database.SQlite
 import com.riquelme.financecontrolapp.model.Order
 
-class OrderRepository(var cotexto: Context) {
+class OrderRepository(var cotext: Context) {
 
     lateinit var database: SQLiteDatabase
 
     init {
-        this.database = SQlite(cotexto).writableDatabase
+        this.database = SQlite(cotext).writableDatabase
     }
 
     fun save(order: Order): Boolean {

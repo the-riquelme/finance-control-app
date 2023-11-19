@@ -12,7 +12,7 @@ class SQlite(context: Context): SQLiteOpenHelper(context, DATABASE, null, VERSIO
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE orders(id integer primary key autoincrement, name text, price real, date integer, entryOrExit integer)")
+        db.execSQL("CREATE TABLE orders(id integer primary key autoincrement, name text, price real, date text, entryOrExit integer)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
